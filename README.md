@@ -7,3 +7,4 @@ for backend
 ```
 bun dev
 ```
+frontend on Cloudflare backend on render
