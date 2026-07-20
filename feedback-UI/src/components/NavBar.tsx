@@ -14,7 +14,7 @@ export function NavBar() {
           <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-lemon text-navy-deep font-display text-lg font-bold">
             L
           </span>
-          <span className="font-display text-lg tracking-wide">Amalfi Bank</span>
+          <span className="font-display text-lg tracking-wide">UniCredit</span>
         </Link>
         <nav className="flex items-center gap-1 rounded-full bg-white/5 p-1 text-xs sm:text-sm">
           {tabs.map((t) => {

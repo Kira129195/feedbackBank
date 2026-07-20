@@ -77,17 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Amalfi Bank — Customer Feedback" },
+      { title: "UniCredit — Customer Feedback" },
       {
         name: "description",
         content:
-          "A Mediterranean-inspired customer feedback portal for Amalfi Bank — submit feedback and review submissions.",
+          "A Mediterranean-inspired customer feedback portal for UniCredit — submit feedback and review submissions.",
       },
-      { property: "og:title", content: "Amalfi Bank — Customer Feedback" },
+      { property: "og:title", content: "UniCredit — Customer Feedback" },
       {
         property: "og:description",
         content:
-          "A Mediterranean-inspired customer feedback portal for Amalfi Bank.",
+          "A Mediterranean-inspired customer feedback portal for UniCredit.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

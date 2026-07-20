@@ -7,10 +7,10 @@ import { useEffect, useState } from 'react';
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Feedback Dashboard — Italy Summer" },
-      { name: "description", content: "Review customer feedback submissions across Amalfi Bank branches — compliments, complaints, and enquiries at a glance." },
-      { property: "og:title", content: "Feedback Dashboard — Amalfi Bank" },
-      { property: "og:description", content: "Review customer feedback submissions across Amalfi Bank branches." },
+      { title: "Feedback Dashboard — UniCredit" },
+      { name: "description", content: "Review customer feedback submissions across UniCredit branches — compliments, complaints, and enquiries at a glance." },
+      { property: "og:title", content: "Feedback Dashboard — UniCredit" },
+      { property: "og:description", content: "Review customer feedback submissions across UniCredit branches." },
       { property: "og:type", content: "website" },
     ],
   }),
@@ -62,13 +62,13 @@ function DashboardPage() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-cream">
       <NavBar />
-      <LemonArt className="pointer-events-none absolute -right-24 top-24 h-[28rem] w-[28rem] text-lemon/30" />
-      <LemonArt className="pointer-events-none absolute -left-32 bottom-10 h-[26rem] w-[26rem] rotate-180 text-leaf/20" />
+      {/* <LemonArt className="pointer-events-none absolute -right-24 top-24 h-[28rem] w-[28rem] text-lemon/30" />
+      <LemonArt className="pointer-events-none absolute -left-32 bottom-10 h-[26rem] w-[26rem] rotate-180 text-leaf/20" /> */}
 
       <main className="relative mx-auto max-w-5xl px-4 py-6 sm:py-10">
         <div className="flex flex-col gap-1">
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-terracotta">
-            Italy Summer · Dashboard
+            UniCredit · Dashboard
           </p>
           <h1 className="font-display text-3xl font-semibold text-navy-deep sm:text-4xl">
             Customer Feedback

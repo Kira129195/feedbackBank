@@ -7,16 +7,16 @@ import { LemonArt } from "@/components/LemonArt";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bank Customer Feedback — Amalfi Bank" },
+      { title: "Bank Customer Feedback — UniCredit" },
       {
         name: "description",
         content:
-          "Share compliments, complaints, or enquiries with Amalfi Bank. A calm Mediterranean form for honest, thoughtful feedback.",
+          "Share compliments, complaints, or enquiries with UniCredit. A calm Mediterranean form for honest, thoughtful feedback.",
       },
-      { property: "og:title", content: "Bank Customer Feedback — Amalfi Bank" },
+      { property: "og:title", content: "Bank Customer Feedback — UniCredit" },
       {
         property: "og:description",
-        content: "Share compliments, complaints, or enquiries with Amalfi Bank.",
+        content: "Share compliments, complaints, or enquiries with UniCredit.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -56,7 +56,7 @@ function Field({
 }
 
 const inputCls =
-  "w-full rounded-lg border border-navy/15 bg-cream-soft px-3.5 py-2.5 text-sm text-navy-deep placeholder:text-navy/35 outline-none transition-all focus:border-navy/40 focus:ring-2 focus:ring-lemon/60";
+  "w-full rounded-lg border border-navy/15 bg-slate-50/50 px-3.5 py-2.5 text-sm text-navy-deep placeholder:text-navy/35 outline-none transition-all focus:border-navy/40 focus:ring-2 focus:ring-lemon/60";
 
 function Select({
   value,
@@ -128,7 +128,7 @@ function FeedbackFormPage() {
         <div className="relative overflow-hidden rounded-2xl bg-navy-deep px-5 py-8 text-center shadow-lg sm:px-10 sm:py-10">
           <LemonArt className="pointer-events-none absolute inset-0 h-full w-full text-lemon/15" />
           <p className="relative text-xs font-semibold uppercase tracking-[0.32em] text-lemon">
-            Amalfi Bank
+            UniCredit
           </p>
           <h1 className="relative mt-2 font-display text-3xl font-semibold text-white sm:text-4xl">
             Bank Customer Feedback Form
@@ -143,9 +143,16 @@ function FeedbackFormPage() {
         <form
           onSubmit={handleSubmit}
           className="relative mt-6 overflow-hidden rounded-2xl border border-navy/10 bg-cream-soft p-5 shadow-xl sm:mt-8 sm:p-8"
+          style={{
+            backgroundImage: "url('/images/lemonFormPic.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "700px 1200px", // Adjust this number to scale the lemons up or down!
+          }}
         >
-          <LemonArt className="pointer-events-none absolute -right-10 -top-10 h-72 w-72 text-leaf/25" />
-          <LemonArt className="pointer-events-none absolute -bottom-16 -left-16 h-80 w-80 rotate-180 text-terracotta/15" />
+
+          {/* <LemonArt className="pointer-events-none absolute -right-10 -top-10 h-72 w-72 text-leaf/25" />
+          <LemonArt className="pointer-events-none absolute -bottom-16 -left-16 h-80 w-80 rotate-180 text-terracotta/15" /> */}
 
           <div className="relative space-y-5">
             <Field label="Type of Feedback">
