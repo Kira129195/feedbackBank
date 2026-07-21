@@ -3,8 +3,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 export function NavBar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const tabs = [
-    { to: "/", label: "Feedback Form" },
-    { to: "/dashboard", label: "Dashboard" },
+    // { to: "/", label: "Feedback Form" },
   ] as const;
 
   return (

@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:1337
+
+POST {{baseUrl}}/sendFeedback
+Content-Type : application/json
+
+{
+  "feedbackType": "Compliment",
+  "feedbackField": "Customer Service",
+  "firstName": "NOTGiulia",
+  "lastName": "Rossi",
+  "email": "giulia.rossi@mail.com",
+  "contactNumber": "+393331234567",
+  "staff": "Marco",
+  "branch": "Positano",
+  "feedbackPayload": "Marco was incredibly patient helping me set up my new savings account. Exceptional service!"
+}

@@ -11,29 +11,31 @@ module.exports = {
     try {
       const db = sails.getDatastore().manager;
       const record = this.req.body;
-
-      // Extract properties directly from the single incoming payload
       const { 
-        customerName, 
+        feedbackType, 
+        feedbackField, 
+        firstName, 
+        lastName, 
         email, 
-        rating, 
-        comments, 
-        address, 
-        sentiment, 
-        sourcePlatform 
+        contactNumber, 
+        staff,
+        branch,
+        feedbackPayload
       } = record;
 
-      // One straightforward, fast insertion into 'forminfo'
-      const insertedForm = await db.collection('forminfo').insertOne({
-        customerName,
+      const insertedForm = await db.collection('formInfo').insertOne({
+        feedbackType: feedbackType || '',
+        feedbackField: feedbackField || '',
+        firstName: firstName ? firstName.trim() : '',
+        lastName: lastName ? lastName.trim() : '',
         email: email ? email.trim().toLowerCase() : '',
-        address: address ? address.trim() : '',
-        rating: rating ? Number(rating) : 0,
-        comments: comments ? comments.trim() : '',
-        sentiment: sentiment || 'Neutral',
-        sourcePlatform: sourcePlatform || 'Dashboard',
-        createdAt: Date.now(),
-        updatedAt: Date.now()
+        contactNumber: contactNumber ? contactNumber.trim() : '',
+        staff: staff || '',
+        branch: branch || '',
+        feedbackPayload: feedbackPayload || {},
+        sourcePlatform: record.sourcePlatform || 'Dashboard',
+        createdAt: new Date(),
+        updatedAt: new Date()
       });
 
       if (!insertedForm || !insertedForm.insertedId) {
