@@ -9,7 +9,8 @@
  */
 
 module.exports.policies = {
-
+  'dashboard/*': 'isLoggedIn',
+  'form/getFeedbackList': 'isLoggedIn',
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions, unless overridden.       *

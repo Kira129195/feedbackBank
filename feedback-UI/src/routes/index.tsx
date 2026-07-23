@@ -326,11 +326,11 @@ function FeedbackFormPage() {
   /* Backdrop Overlay */
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-navy-deep/40 backdrop-blur-sm p-4 transition-all animate-in fade-in duration-300">
     
-    {/* Card Container: Symmetric padding for true vertical centering */}
-    <div className="relative w-full max-w-2xl overflow-visible rounded-[32px] bg-white p-8 sm:p-10 shadow-2xl animate-in zoom-in-95 duration-300">
+    {/* Card Container: Compact width, sleek rounded corners, subtle navy border */}
+    <div className="relative w-full max-w-md overflow-hidden rounded-3xl bg-white p-8 sm:p-10 shadow-2xl border border-navy-deep/5 animate-in zoom-in-95 duration-300">
       
-      {/* Background accents */}
-      <LemonArt className="pointer-events-none absolute -right-6 -bottom-6 h-32 w-32 rotate-180 text-lemon/20" />
+      {/* Optional Top Accent Bar in Lemon/Gold */}
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-lemon via-lemon/80 to-lemon" />
 
       {/* Close button */}
       <button
@@ -338,40 +338,36 @@ function FeedbackFormPage() {
         className="absolute right-5 top-5 z-30 rounded-full p-1 text-navy/40 transition-colors hover:bg-slate-100 hover:text-navy-deep"
         aria-label="Close"
       >
-        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
 
-      {/* Content Layout: `items-center` locks both columns precisely in the middle */}
-      <div className="relative z-10 flex flex-col items-center sm:flex-row sm:items-center">
+      {/* Content Layout */}
+      <div className="text-center pt-2">
         
-        {/* 1. LARGE ILLUSTRATION: Left bleed preserved (-ml-16), but top margin removed for perfect vertical centering */}
-        <div className="relative shrink-0 -ml-8 sm:-ml-20 -mr-4 sm:-mr-6 z-20 pointer-events-none">
-          <img 
-            src="/images/successIllustration.png" 
-            alt="Italian Summer Illustration"
-            className="h-60 w-60 sm:h-[300px] sm:w-[300px] object-contain drop-shadow-xl transform scale-110 sm:scale-125"
-          />
-        </div>
+        {/* Subtitle / Tagline Badge */}
+        <span className="inline-block text-[11px] font-bold tracking-widest text-navy/50 uppercase mb-2">
+          Feedback Received
+        </span>
 
-        {/* 2. TEXT & BUTTON BLOCK: Vertically aligned with image center */}
-        <div className="flex-1 text-center sm:text-left pr-0 sm:pr-2">
-          <h3 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-navy-deep">
-            Grazie Mille!
-          </h3>
-          
-          <p className="mt-3 text-xs sm:text-sm leading-relaxed text-navy/75">
-            Your feedback has been recorded successfully! Please do not include sensitive information such as account numbers, PINs, or passwords in future. Enjoy the sunshine!
-          </p>
-          
-          <button
-            onClick={() => setSubmitted(false)}
-            className="mt-5 rounded-full bg-navy-deep px-8 py-3 text-xs font-semibold tracking-widest text-lemon uppercase shadow-md transition-all hover:bg-navy hover:shadow-lg active:scale-[0.98]"
-          >
-            Buona Giornata!
-          </button>
-        </div>
+        {/* Primary Heading */}
+        <h3 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-navy-deep">
+          Grazie Mille!
+        </h3>
+        
+        {/* Copy */}
+        <p className="mt-4 text-xs sm:text-sm leading-relaxed text-navy/75 max-w-xs mx-auto">
+          Your feedback has been recorded successfully. Our team will review your comments, and if you requested a follow-up, we will reach out within 24 hours. 
+        </p>
+        
+        {/* CTA Button */}
+        <button
+          onClick={() => setSubmitted(false)}
+          className="mt-6 w-full sm:w-auto rounded-full bg-navy-deep px-8 py-3.5 text-xs font-semibold tracking-widest text-lemon uppercase shadow-md transition-all hover:bg-navy hover:shadow-lg active:scale-[0.98]"
+        >
+          Buona Giornata!
+        </button>
 
       </div>
 

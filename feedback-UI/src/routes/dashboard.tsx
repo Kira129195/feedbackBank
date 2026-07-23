@@ -84,26 +84,33 @@ function DashboardPage() {
         </div>
 
         {/* Stats */}
-        <div className="mt-6 grid grid-cols-3 gap-3 sm:gap-4">
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className={
-                "relative overflow-hidden rounded-2xl px-4 py-5 shadow-md " +
-                (s.tone === "lemon"
+          <div className="mt-6 grid grid-cols-3 gap-3 sm:gap-4">
+            {stats.map((s, i) => {
+              // 0 = Lemon, 1 = White, 2 = Navy
+              const cardStyle =
+                i === 0
                   ? "bg-lemon text-navy-deep"
-                  : "bg-navy-deep text-lemon")
-              }
-            >
-              <div className="font-display text-4xl font-bold leading-none sm:text-5xl">
-                {s.value}
-              </div>
-              <div className="mt-2 text-[10px] font-semibold uppercase tracking-[0.2em] opacity-80 sm:text-xs">
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
+                  : i === 1
+                  ? "bg-white text-navy-deep border border-navy-deep/10"
+                  : "bg-navy-deep text-lemon";
+
+              return (
+                <div
+                  key={s.label}
+                  className={
+                    "relative overflow-hidden rounded-2xl px-4 py-5 shadow-md " + cardStyle
+                  }
+                >
+                  <div className="font-display text-4xl font-bold leading-none sm:text-5xl">
+                    {s.value}
+                  </div>
+                  <div className="mt-2 text-[10px] font-semibold uppercase tracking-[0.2em] opacity-80 sm:text-xs">
+                    {s.label}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
         {/* Entries */}
         <section className="mt-8 space-y-3 sm:space-y-4">
